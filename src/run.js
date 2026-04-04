@@ -4,7 +4,7 @@ require("dotenv").config();
 const { claimAll } = require("./claimer");
 const tg = require("./telegram");
 
-const DRY_RUN = process.env.DRY_RUN === "true";
+const DRY_RUN = process.env.DRY_RUN === "false";
 
 async function run() {
   console.log(`🔔 Claim triggered at ${new Date().toISOString()}`);
