@@ -29,5 +29,5 @@ jobs:
           TELEGRAM_CHAT_ID:    ${{ secrets.TELEGRAM_CHAT_ID }}
           ENABLE_CELO:         "true"
           ENABLE_FUSE:         "true"
-          DRY_RUN:             "true"
+          DRY_RUN:             "false"
         run: node src/run.js
