@@ -1,0 +1,33 @@
+name: GoodDollar Daily Claimer
+
+on:
+  schedule:
+    - cron: '0 23 * * *'   # 23:00 UTC = 00:00 Lagos (UTC+1)
+  workflow_dispatch:         # allows manual trigger from Actions tab
+
+jobs:
+  claim:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run claimer
+        env:
+          WALLET_PRIVATE_KEY:  ${{ secrets.WALLET_PRIVATE_KEY }}
+          TELEGRAM_BOT_TOKEN:  ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:    ${{ secrets.TELEGRAM_CHAT_ID }}
+          ENABLE_CELO:         "true"
+          ENABLE_FUSE:         "true"
+        run: node src/run.js
