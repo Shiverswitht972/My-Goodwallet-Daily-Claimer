@@ -91,7 +91,7 @@ async function claimOnNetwork(networkKey, wallet) {
     const tx = await contract.claim(txOptions);
     console.log(`[${net.name}] ⏳ Tx sent: ${tx.hash} — waiting for confirmation...`);
 
-    const receipt = await tx.wait(2); // wait 2 confirmations
+    const receipt = await tx.wait(1); // ← CHANGED: 2 → 1 confirmation (prevents timeout)
 
     if (receipt.status === 1) {
       const amount = ethers.utils.formatUnits(entitlement, 2);
