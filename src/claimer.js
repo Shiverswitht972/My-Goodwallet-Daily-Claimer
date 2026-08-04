@@ -149,9 +149,10 @@ async function claimAll() {
   const enabledNetworks = [];
   if (process.env.ENABLE_CELO !== "false") enabledNetworks.push("celo");
   if (process.env.ENABLE_FUSE !== "false") enabledNetworks.push("fuse");
+  if (process.env.ENABLE_XDC !== "false") enabledNetworks.push("xdc");
 
   if (enabledNetworks.length === 0) {
-    console.warn("⚠️  No networks enabled. Set ENABLE_CELO/ENABLE_FUSE in .env");
+    console.warn("⚠️  No networks enabled. Set ENABLE_CELO/ENABLE_FUSE/ENABLE_XDC in .env");
     return;
   }
 
