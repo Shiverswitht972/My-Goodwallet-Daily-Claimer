@@ -1,12 +1,12 @@
 # 🪙 GoodDollar Auto-Claimer Bot
 
-Auto-claims your GoodDollar (G$) UBI every 24 hours on **Celo** and **Fuse** networks, and notifies you via **Telegram** whether each claim succeeded or failed.
+Auto-claims your GoodDollar (G$) UBI every 24 hours on **Celo**, **Fuse**, and **XDC** networks, and notifies you via **Telegram** whether each claim succeeded or failed.
 
 ---
 
 ## Features
 
-- ✅ Claims on both Celo and Fuse networks daily
+- ✅ Claims on Celo, Fuse, and XDC networks daily
 - ⛽ Gas balance warning before each claim
 - ℹ️ Skips gracefully if already claimed today
 - 📣 Telegram notifications: success / failure / already claimed / low gas
@@ -21,6 +21,7 @@ Auto-claims your GoodDollar (G$) UBI every 24 hours on **Celo** and **Fuse** net
 - A **GoodDollar-verified wallet** (face-verified via GoodWallet)
 - Some **CELO** on Celo network for gas (~0.01 CELO is plenty)
 - Some **FUSE** on Fuse network for gas (~0.01 FUSE is plenty)
+- Some **XDC** on XDC network for gas (~0.01 XDC is plenty)
 - A **Telegram bot token** (from @BotFather)
 
 ---
@@ -50,6 +51,7 @@ Edit `.env` with your values:
 | `TELEGRAM_CHAT_ID` | ✅ | Your Telegram user/chat ID |
 | `ENABLE_CELO` | optional | `true` / `false` (default: true) |
 | `ENABLE_FUSE` | optional | `true` / `false` (default: true) |
+| `ENABLE_XDC` | optional | `true` / `false` (default: true) |
 | `CRON_SCHEDULE` | optional | Cron string, UTC (default: `0 9 * * *`) |
 | `CLAIM_ON_START` | optional | Run a claim immediately on startup |
 
@@ -109,7 +111,7 @@ npm start
 gooddollar-claimer/
 ├── src/
 │   ├── index.js      # Entry point + cron scheduler
-│   ├── claimer.js    # Claim logic for Celo & Fuse
+│   ├── claimer.js    # Claim logic for Celo, Fuse & XDC
 │   ├── telegram.js   # Telegram notification helpers
 │   └── config.js     # Network config + contract ABI
 ├── .env.example      # Copy to .env and fill in
@@ -141,3 +143,6 @@ gooddollar-claimer/
 
 **Low gas on Fuse**  
 → Bridge or buy a small amount of FUSE. Even 0.01 FUSE covers hundreds of claim txs.
+
+**Low gas on XDC**  
+→ Buy a small amount of XDC. Even 0.01 XDC covers hundreds of claim txs.
