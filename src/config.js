@@ -18,6 +18,14 @@ const NETWORKS = {
     symbol: "FUSE",
     explorer: "https://explorer.fuse.io/tx/",
   },
+  xdc: {
+    name: "XDC",
+    chainId: 50,
+    rpcUrl: process.env.XDC_RPC_URL || "https://rpc.xinfin.network",
+    ubiContract: "0x22867567E2D80f2049200E25C6F31CB6Ec2F0faf",
+    symbol: "XDC",
+    explorer: "https://xdcscan.com/tx/",
+  },
 };
 
 // Minimal ABI for GoodDollar UBIScheme contract
