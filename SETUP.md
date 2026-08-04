@@ -1,7 +1,7 @@
 # 🪙 GoodDollar Auto-Claimer — Setup Guide
 ### For people who have never touched code in their life
 
-This tool automatically collects your free daily G$ (GoodDollar) on both Celo and Fuse every single day — without you doing anything after setup. It runs on GitHub's free servers. No laptop needs to be on. No app to keep open.
+This tool automatically collects your free daily G$ (GoodDollar) on Celo, Fuse, and XDC every single day — without you doing anything after setup. It runs on GitHub's free servers. No laptop needs to be on. No app to keep open.
 
 **Total setup time: about 15 minutes.**
 
@@ -122,7 +122,7 @@ Before trusting it to run on its own, let's confirm it works.
 
 The tool will now:
 - Run automatically every night at midnight Lagos time
-- Claim G$ on both Celo and Fuse networks
+- Claim G$ on Celo, Fuse, and XDC networks
 - Send you a Telegram message confirming the claim (if you set it up)
 - Skip quietly if already claimed or not eligible yet
 
