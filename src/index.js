@@ -12,7 +12,7 @@ const { ethers } = require("ethers");
 async function main() {
   console.log("╔══════════════════════════════════════════════╗");
   console.log("║      GoodDollar Auto-Claimer Bot             ║");
-  console.log("║      Celo + Fuse Networks                    ║");
+  console.log("║      Celo + Fuse + XDC Networks              ║");
   console.log("╚══════════════════════════════════════════════╝");
 
   // Validate required env vars
@@ -89,6 +89,7 @@ function getEnabledNetworks() {
   const nets = [];
   if (process.env.ENABLE_CELO !== "false") nets.push("Celo");
   if (process.env.ENABLE_FUSE !== "false") nets.push("Fuse");
+  if (process.env.ENABLE_XDC !== "false") nets.push("XDC");
   return nets.join(" + ") || "none";
 }
 
