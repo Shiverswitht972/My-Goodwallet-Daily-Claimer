@@ -1,7 +1,7 @@
 {
   "name": "gooddollar-claimer",
   "version": "1.0.0",
-  "description": "Auto-claims GoodDollar UBI on Celo and Fuse every 24hrs with Telegram notifications",
+  "description": "Auto-claims GoodDollar UBI on Celo, Fuse, and XDC every 24hrs with Telegram notifications",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
