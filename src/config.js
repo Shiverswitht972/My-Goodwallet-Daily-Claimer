@@ -21,7 +21,7 @@ const NETWORKS = {
   xdc: {
     name: "XDC",
     chainId: 50,
-    rpcUrl: process.env.XDC_RPC_URL || "https://rpc.xinfin.network",
+    rpcUrl: process.env.XDC_RPC_URL || "https://erpc.xdcrpc.com",
     ubiContract: "0x22867567E2D80f2049200E25C6F31CB6Ec2F0faf",
     symbol: "XDC",
     explorer: "https://xdcscan.com/tx/",
